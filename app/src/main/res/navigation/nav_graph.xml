@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/device_list_dest"
-        android:name="com.maksonlee.thingsboardclient.ui.device.DeviceListFragment"
+        android:name="com.maksonlee.thingsboardclient.ui.devicelist.DeviceListFragment"
         android:label="Devices"
         tools:layout="@layout/fragment_device_list">
         <action

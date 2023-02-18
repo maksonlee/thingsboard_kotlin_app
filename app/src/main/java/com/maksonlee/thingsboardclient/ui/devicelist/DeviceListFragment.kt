@@ -1,4 +1,4 @@
-package com.maksonlee.thingsboardclient.ui.device
+package com.maksonlee.thingsboardclient.ui.devicelist
 
 import android.content.Context
 import android.os.Bundle
@@ -10,8 +10,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.maksonlee.thingsboardclient.databinding.FragmentDeviceListBinding
-import com.maksonlee.thingsboardclient.ui.device.DeviceListViewModel
-import com.maksonlee.thingsboardclient.ui.device.DeviceListViewModelFactory
 import timber.log.Timber
 
 class DeviceListFragment : Fragment() {
@@ -48,7 +46,7 @@ class DeviceListFragment : Fragment() {
                     remove("customerId")
                     apply()
                 }
-                findNavController().navigate(DeviceListFragmentDirections.actionDeviceListDestToLoginDest())
+                findNavController().navigate(com.maksonlee.thingsboardclient.ui.device.DeviceListFragmentDirections.actionDeviceListDestToLoginDest())
             }
             if (deviceListFetchResult.success != null) {
                 adapter.data = deviceListFetchResult.success

@@ -1,4 +1,4 @@
-package com.maksonlee.thingsboardclient.ui.device
+package com.maksonlee.thingsboardclient.ui.devicelist
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.maksonlee.thingsboardclient.data.Repository
 import com.maksonlee.thingsboardclient.data.Result
-import com.maksonlee.thingsboardclient.data.model.thingsboard.DeviceInfo
 import kotlinx.coroutines.launch
 import timber.log.Timber
 

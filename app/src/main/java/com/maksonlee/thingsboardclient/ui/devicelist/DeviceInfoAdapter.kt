@@ -1,4 +1,4 @@
-package com.maksonlee.thingsboardclient.ui.device
+package com.maksonlee.thingsboardclient.ui.devicelist
 
 import android.view.LayoutInflater
 import android.view.View
