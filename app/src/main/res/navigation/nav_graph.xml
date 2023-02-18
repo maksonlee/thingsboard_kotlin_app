@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/login_dest">
+    <fragment
+        android:id="@+id/login_dest"
+        android:name="com.maksonlee.thingsboardclient.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_dest_to_device_list_dest"
+            app:destination="@id/device_list_dest"
+            app:popUpTo="@id/login_dest"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/device_list_dest"
+        android:name="com.maksonlee.thingsboardclient.ui.device.DeviceListFragment"
+        android:label="Devices"
+        tools:layout="@layout/fragment_device_list">
+        <action
+            android:id="@+id/action_device_list_dest_to_login_dest"
+            app:destination="@id/login_dest" />
+        <action
+            android:id="@+id/action_device_list_dest_to_device_dest"
+            app:destination="@id/device_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/device_dest"
+        android:name="com.maksonlee.thingsboardclient.ui.device.DeviceFragment"
+        android:label="Device"
+        tools:layout="@layout/fragment_device">
+        <action
+            android:id="@+id/action_device_dest_to_deviceListFragment"
+            app:destination="@id/device_list_dest" />
+        <action
+            android:id="@+id/action_device_dest_to_login_dest"
+            app:destination="@id/login_dest" />
+    </fragment>
+</navigation>
