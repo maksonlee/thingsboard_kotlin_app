@@ -46,7 +46,7 @@ class DeviceListFragment : Fragment() {
                     remove("customerId")
                     apply()
                 }
-                findNavController().navigate(com.maksonlee.thingsboardclient.ui.device.DeviceListFragmentDirections.actionDeviceListDestToLoginDest())
+                findNavController().navigate(DeviceListFragmentDirections.actionDeviceListDestToLoginDest())
             }
             if (deviceListFetchResult.success != null) {
                 adapter.data = deviceListFetchResult.success
