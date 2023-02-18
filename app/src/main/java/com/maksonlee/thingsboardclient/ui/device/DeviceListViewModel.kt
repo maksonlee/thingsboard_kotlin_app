@@ -6,7 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.maksonlee.thingsboardclient.data.Repository
 import com.maksonlee.thingsboardclient.data.Result
+import com.maksonlee.thingsboardclient.data.model.thingsboard.DeviceInfo
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 class DeviceListViewModel(private val repository: Repository) : ViewModel() {
 
@@ -15,12 +17,16 @@ class DeviceListViewModel(private val repository: Repository) : ViewModel() {
 
     fun fetch() {
         viewModelScope.launch {
-            val result = repository.getCustomerDeviceInfos()
-            if (result is Result.Success) {
-                _fetchResult.value = DeviceListFetchResult(success = result.data)
-            } else if (result is Result.Error) {
-                _fetchResult.value =
-                    DeviceListFetchResult(error = result.exception.message!!.toInt())
+            try {
+                val result = repository.getCustomerDeviceInfos()
+                if (result is Result.Success) {
+                    _fetchResult.value = DeviceListFetchResult(success = result.data)
+                } else if (result is Result.Error) {
+                    _fetchResult.value =
+                        DeviceListFetchResult(error = result.exception.message!!.toInt())
+                }
+            } catch (e: Exception) {
+                Timber.e(e)
             }
         }
     }
